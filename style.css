@@ -97,3 +97,32 @@
             margin-bottom: 15px;
             color: #333;
         }
+/* ==========================================================================
+   2. Global Table Image Rules (Applies to ALL 19 images)
+   ========================================================================== */
+
+table tbody img {
+    cursor: pointer;           /* Makes the mouse cursor a clicking hand */
+    border-radius: 8px;        /* Softens corners into smooth squares */
+    box-sizing: border-box;    /* Keeps the 3px borders inside the 100x100 limits */
+    
+    /* Sets up a smooth 0.2 second zoom and glow effect when hovered over */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+}
+
+/* Hover Zoom Code: Automatically applies to every single image */
+table tbody img:hover {
+    transform: scale(1.15);    /* Grows the image by 15% smoothly when hovered */
+    z-index: 10;               /* Ensures the zoomed image sits on top of table borders */
+}
+
+
+/* ==========================================================================
+   3. Separate Image Custom Codes (Unique styling per Dragon ID)
+   ========================================================================== */
+
+/* --- Metallic Dragons --- */
+#dragon-brass {
+    border: 3px solid #E1A95F;
+    box-shadow: 0 0 8px #E1A95F;
+}
