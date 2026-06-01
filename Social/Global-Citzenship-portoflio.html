@@ -51,14 +51,6 @@
     </p>
 </div>
 
-<div id="games" class="panel">
-    <h2>Games</h2>
-    <p>Click the buttons below to load the games!</p>
-    <button onclick="toggleScratchGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Maze Game</button>
-    <button onclick="toggleFlappybirdGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Flappy Bird Game</button>
-    <button onclick="toggleDancerGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer;">Dancer Game</button>
-</div>
-
 
 <div id="travelContainer" class="main-page-content">
     <h2 style="font-size:40px; color:black">Places or Countries I Have Travelled To</h2>
@@ -186,11 +178,6 @@
             document.getElementById("musicContainer").style.display = "none";
             document.getElementById("printContainer").style.display = "none";
         }
-        if (panelId !== 'games') {
-            document.getElementById("scratchContainer").style.display = "none";
-            document.getElementById("FlappyContainer").style.display = "none";
-            document.getElementById("DancerContainer").style.display = "none";
-        }
         if (panelId !== 'about') {
             document.getElementById("aboutMeContainer").style.display = "none";
         }
@@ -199,51 +186,7 @@
         }
     }
 
-    function toggleScratchGame() {
-        var scratchBox = document.getElementById("scratchContainer");
-        var flappyBox = document.getElementById("FlappyContainer");
-        var dancerBox = document.getElementById("DancerContainer");
-        
-        flappyBox.style.display = "none";
-        dancerBox.style.display = "none";
-        
-        if (scratchBox.style.display === "none" || scratchBox.style.display === "") {
-            scratchBox.style.display = "block";
-        } else {
-            scratchBox.style.display = "none";
-        }
-    }
-
-    function toggleFlappybirdGame() {
-        var scratchBox = document.getElementById("scratchContainer");
-        var flappyBox = document.getElementById("FlappyContainer");
-        var dancerBox = document.getElementById("DancerContainer");
-        
-        scratchBox.style.display = "none";
-        dancerBox.style.display = "none";
-        
-        if (flappyBox.style.display === "none" || flappyBox.style.display === "") {
-            flappyBox.style.display = "block";
-        } else {
-            flappyBox.style.display = "none";
-        }
-    }
-
-    function toggleDancerGame() {
-        var scratchBox = document.getElementById("scratchContainer");
-        var flappyBox = document.getElementById("FlappyContainer");
-        var dancerBox = document.getElementById("DancerContainer");
-           
-        scratchBox.style.display = "none";  
-        flappyBox.style.display = "none";
-
-        if (dancerBox.style.display === "none" || dancerBox.style.display === "") {
-            dancerBox.style.display = "block";
-        } else {
-            dancerBox.style.display = "none";
-        }
-    }
-
+   
     function togglePersonal() {
         var personalContainer = document.getElementById("personalContainer");
         if (personalContainer.style.display === "none" || personalContainer.style.display === "") {
