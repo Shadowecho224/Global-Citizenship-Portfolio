@@ -18,9 +18,9 @@
 <ul class="nav-bar">
     <li><a onclick="showPanel('passport')">Passport</a></li>
     <li><a onclick="showPanel('citizen')">Global Citizen</a></li>
-    <li><a onclick="showPanel('entry')">Journals</a></li>
-    <li><a onclick="showPanel('contact')">contact</a></li>
-    <li><a onclick="showPanel('about')">about</a></li>
+    <li><a onclick="showPanel('entry')">Journal Entry 1</a></li>
+    <li><a onclick="showPanel('entry2')">Journal Entry 2</a></li>
+    <li><a onclick="showPanel('aentry3')">Journal Entry 3</a></li>
 </ul>
 
 <div id="passport" class="panel">
@@ -37,29 +37,20 @@
     <button onclick="toggleDragonTable()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Toggle Dragon Table</button>
 </div>
 
-<div id="entry" class="panel">
+<div id="entry1" class="panel">
     <h2>Journal Entry 1</h2>
-    <p>Feel free to reach out via email or social media.</p>
-    <button onclick="toggleJournalEntry1()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Journal 1</button>
-    <button onclick="toggleJournalEntry2()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Journal 2</button>
-    <button onclick="toggleJournalEntry3()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Journal 3</button>
+    <button onclick="toggleJournalEntry1()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
 </div>
 
-<div id="contact" class="panel">
+<div id="entry2" class="panel">
     <h2>Journal Entry 2</h2>
-    <p style="text-align:center;">
-        <button type="button" style="font-size:20px;" onclick="toggleAbout()">
-            <b>Show Bio</b>
-        </button>
-    </p>
+    <button onclick="toggleJournalEntry2()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
 </div>
 
-<div id="about" class="panel">
+<div id="entry3" class="panel">
     <h2>Journal Entry 3</h2>
     <p>Click the buttons below to load the games!</p>
-    <button onclick="toggleScratchGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Maze Game</button>
-    <button onclick="toggleFlappybirdGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Flappy Bird Game</button>
-    <button onclick="toggleDancerGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer;">Dancer Game</button>
+    <button onclick="toggleJournalEntry3()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
 </div>
 
 
@@ -115,14 +106,6 @@
 </div>
 
 
-<div id="aboutMeContainer" class="main-page-content">
-    <h2 style="font-size:40px; color:black;">About Me Detailed</h2>
-    <p>Insert your biography or detailed profile information details here.</p>
-</div>
-
-<div id="Journal1Container" class="game-container"><h3>Journal Entry 1</h3></div>
-<div id="Journal2Container" class="game-container"><h3>Journal Entry 2</h3></div>
-<div id="Journal3Container" class="game-container"><h3>Journal Entry 3</h3></div>
 
 <div id="GlobalcitizenContainer" class="main-page-content">
     <table style="width:100%; background-color:white;">
@@ -147,41 +130,6 @@
     </table>
 </div>
 
-<div id="Journal1Container" class="game-container">  
-    <iframe 
-      src="https://scratch.mit.edu/projects/1307013583/embed" 
-      allowtransparency="true" 
-      width="500" 
-      height="500" 
-      frameborder="0" 
-      scrolling="no" 
-      allowfullscreen>
-    </iframe>
-</div>
-
-<div id="Journal2Container" class="game-container">
-    <iframe 
-      src="https://studio.code.org/projects/flappy/7e1b1174-a85c-4d3a-bd3b-66db98c34995/embed" 
-      allowtransparency="true" 
-      width="500" 
-      height="500" 
-      frameborder="0" 
-      scrolling="no" 
-      allowfullscreen>
-    </iframe>
-</div>
-
-<div id="Journal3Container" class="game-container">
-    <iframe 
-      src="https://studio.code.org/projects/dance/MYSHX0C-n59Y77T9spvfL8ko9XYXdjiuREgx1YEfJD4/embed" 
-      allowtransparency="true" 
-      width="500" 
-      height="500" 
-      frameborder="0" 
-      scrolling="no" 
-      allowfullscreen>
-    </iframe>
-</div>
 
 <script>
     function showPanel(panelId) {
@@ -197,16 +145,17 @@
                 document.getElementById("musicContainer").style.display = "none";
                 document.getElementById("printContainer").style.display = "none";
             }
-            if (panelId === 'entry') {
+            if (panelId === 'entry1') {
                 document.getElementById("Journal1Container").style.display = "none";
+            }
+            if (panelId === 'entry2') {
                 document.getElementById("Journal2Container").style.display = "none";
+            }
+            if (panelId === 'entry3') {
                 document.getElementById("Journal3Container").style.display = "none";
             }
-            if (panelId === 'about') {
-                document.getElementById("aboutMeContainer").style.display = "none";
-            }
             if (panelId === 'citizen') {
-                document.getElementById("GlobalcitizenContainer").style.display = "none";
+                document.getElementById("Journal3Container").style.display = "none";
             }
             return; 
         }
@@ -224,63 +173,20 @@
             document.getElementById("musicContainer").style.display = "none";
             document.getElementById("printContainer").style.display = "none";
         }
-        if (panelId !== 'entry') {
+        if (panelId !== 'entry1') {
             document.getElementById("Journal1Container").style.display = "none";
-            document.getElementById("Journal2Container").style.display = "none";
-            document.getElementById("Journal3Container").style.display = "none";
         }
-        if (panelId !== 'contact') {
-            document.getElementById("aboutMeContainer").style.display = "none";
+         if (panelId !== 'entry2') {
+            document.getElementById("Journal2Container").style.display = "none";
+             }
+         if (panelId !== 'entry3') {
+            document.getElementById("Journal3Container").style.display = "none";
         }
         if (panelId !== 'citizen') {
             document.getElementById("GlobalcitizenContainer").style.display = "none";
         }
     }
 
-    function toggleJournalEntry1() {
-        var JournalEntry1Box = document.getElementById("Journal1Container");
-        var JournalEntry2Box = document.getElementById("Journal2Container");
-        var JournalEntry3Box = document.getElementById("Journal3Container");
-        
-        JournalEntry2Box.style.display = "none";
-        JournalEntry3Box.style.display = "none";
-        
-        if (JournalEntry1Box.style.display === "none" || JournalEntry1Box.style.display === "") {
-            JournalEntry1Box.style.display = "block";
-        } else {
-            JournalEntry1Box.style.display = "none";
-        }
-    }
-
-    function toggleJournalEntry2() {
-        var JournalEntry1Box = document.getElementById("Journal1Container");
-        var JournalEntry2Box = document.getElementById("Journal2Container");
-        var JournalEntry3Box = document.getElementById("Journal3Container");
-        
-        JournalEntry1Box.style.display = "none";
-        JournalEntry3Box.style.display = "none";
-        
-        if (JournalEntry2Box.style.display === "none" || JournalEntry2Box.style.display === "") {
-            JournalEntry2Box.style.display = "block";
-        } else {
-            JournalEntry2Box.style.display = "none";
-        }
-    }
-
-    function toggleJournalEntry3() {
-        var JournalEntry1Box = document.getElementById("Journal1Container");
-        var JournalEntry2Box = document.getElementById("Journal2Container");
-        var JournalEntry3Box = document.getElementById("Journal3Container");
-           
-        JournalEntry1Box.style.display = "none";  
-        JournalEntry2Box.style.display = "none";
-
-        if (JournalEntry3Box.style.display === "none" || JournalEntry3Box.style.display === "") {
-            JournalEntry3Box.style.display = "block";
-        } else {
-            JournalEntry3Box.style.display = "none";
-        }
-    }
 
     function togglePersonal() {
         var personalContainer = document.getElementById("personalContainer");
@@ -324,6 +230,30 @@
             tableBox.style.display = "block";
         } else {
             tableBox.style.display = "none";
+        }
+    }
+        function toggleJournalEntry1(){  
+        var JournalEntry1Box = document.getElementById("JournalEntry1Container");
+        if (JournalEntry1Box.style.display === "none" || JournalEntry1Box.style.display === "") {
+            JournalEntry1Box.style.display = "block";
+        } else {
+           JournalEntry1Box.style.display = "none";
+        }
+    }
+        function toggleJournalEntry2(){  
+        var JournalEntry2Box = document.getElementById("JournalEntry2Container");
+        if (JournalEntry2Box.style.display === "none" || JournalEntry2Box.style.display === "") {
+            JournalEntry2Box.style.display = "block";
+        } else {
+           JournalEntry2Box.style.display = "none";
+        }
+    }
+        function toggleJournalEntry3(){  
+        var JournalEntry3Box = document.getElementById("JournalEntry3Container");
+        if (JournalEntry3Box.style.display === "none" || JournalEntry3Box.style.display === "") {
+            JournalEntry3Box.style.display = "block";
+        } else {
+           JournalEntry3Box.style.display = "none";
         }
     }
 </script>
