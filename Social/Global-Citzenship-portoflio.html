@@ -6,9 +6,9 @@
 
     <title>Global Citizenship Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
-<body style="background-color: white”">
+<body style="background-color: white;">
 
 <div id="header-box">
     <h1 style="color: white;">Global Citizenship Portfolio</h1>
@@ -51,6 +51,14 @@
     </p>
 </div>
 
+<div id="games" class="panel">
+    <h2>Games</h2>
+    <p>Click the buttons below to load the games!</p>
+    <button onclick="toggleScratchGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Maze Game</button>
+    <button onclick="toggleFlappybirdGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Flappy Bird Game</button>
+    <button onclick="toggleDancerGame()" style="font-size: 16px; padding: 10px 20px; cursor: pointer;">Dancer Game</button>
+</div>
+
 
 <div id="travelContainer" class="main-page-content">
     <h2 style="font-size:40px; color:black">Places or Countries I Have Travelled To</h2>
@@ -62,7 +70,7 @@
 
 <div id="personalContainer" class="main-page-content">
     <h2 style="font-size:40px; color:black">Personal Information</h2>
-    <p><img src="Me.png" width="200" height="200" alt="Profile Image"></p>
+    <p><img src="Me.jpg" width="200" height="200" alt="Profile Image"></p>
     <p style="color:black">Name: Echo</p>
     <p style="color:black">Date of Birth: November 27, 2009</p>
     <p style="color:black">Place Of Birth: </p>
@@ -78,8 +86,8 @@
 
 <div id="printContainer" class="main-page-content">
     <h1 style="font-size:40px; color:black;">Ecological Footprint</h1>
-    <p><img src="Ecologicalfootprint.png"></p>
-    <p><img src="EcoFootprint.png"></p>
+    <p><img src="Ecologicalfootprint.jpg" alt="Ecological Footprint Results"></p>
+    <p><img src="EcoFootprint.jpg" alt="Footprint Breakdown"></p>
     <h2>List of actions</h2>
     <dl class="alignment-list">
         <dt>Lawful Good: (LG)</dt>
@@ -123,13 +131,12 @@
                 <th style="color:black; font-size:18px; border: 2px solid black;"><i><b>What contributions have they made to globalization (e.g., human rights, environment, economy, education, technology)?</b></i></th>
                 <th style="color:black; font-size:18px; border: 2px solid black;"><i><b>What challenges or opposition have they faced in their work?</b></i></th>
                 <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>Why do you believe this person deserves the “Global Citizen” title?</b></i></th>
-                <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>What lesson can you learn from their story to apply to your life?
-</b></i></th>
+                <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>What lesson can you learn from their story to apply to your life?</b></i></th>
             </tr>
         </thead>
         <tbody>
             <tr style="color:black; background-color:white; font-size:15px;">
-                <td style="border: 2px solid black; text-align: center;"><img src="brass-metallic-dragon.png" width="100" height="100" alt="Brass"></td>
+                <td style="border: 2px solid black; text-align: center;"><img src="brass-metallic-dragon.png" id="dragon-brass" width="100" height="100" alt="Brass"></td>
                 <td style="border: 2px solid black; text-align: center;">Emma Watson – UN Women Goodwill Ambassador leading the HeForShe gender equality campaign.</td>
                 <td style="border: 2px solid black; text-align: center;"></td>
             </tr>
@@ -178,6 +185,11 @@
             document.getElementById("musicContainer").style.display = "none";
             document.getElementById("printContainer").style.display = "none";
         }
+        if (panelId !== 'games') {
+            document.getElementById("scratchContainer").style.display = "none";
+            document.getElementById("FlappyContainer").style.display = "none";
+            document.getElementById("DancerContainer").style.display = "none";
+        }
         if (panelId !== 'about') {
             document.getElementById("aboutMeContainer").style.display = "none";
         }
@@ -186,7 +198,51 @@
         }
     }
 
-   
+    function toggleScratchGame() {
+        var scratchBox = document.getElementById("scratchContainer");
+        var flappyBox = document.getElementById("FlappyContainer");
+        var dancerBox = document.getElementById("DancerContainer");
+        
+        flappyBox.style.display = "none";
+        dancerBox.style.display = "none";
+        
+        if (scratchBox.style.display === "none" || scratchBox.style.display === "") {
+            scratchBox.style.display = "block";
+        } else {
+            scratchBox.style.display = "none";
+        }
+    }
+
+    function toggleFlappybirdGame() {
+        var scratchBox = document.getElementById("scratchContainer");
+        var flappyBox = document.getElementById("FlappyContainer");
+        var dancerBox = document.getElementById("DancerContainer");
+        
+        scratchBox.style.display = "none";
+        dancerBox.style.display = "none";
+        
+        if (flappyBox.style.display === "none" || flappyBox.style.display === "") {
+            flappyBox.style.display = "block";
+        } else {
+            flappyBox.style.display = "none";
+        }
+    }
+
+    function toggleDancerGame() {
+        var scratchBox = document.getElementById("scratchContainer");
+        var flappyBox = document.getElementById("FlappyContainer");
+        var dancerBox = document.getElementById("DancerContainer");
+           
+        scratchBox.style.display = "none";  
+        flappyBox.style.display = "none";
+
+        if (dancerBox.style.display === "none" || dancerBox.style.display === "") {
+            dancerBox.style.display = "block";
+        } else {
+            dancerBox.style.display = "none";
+        }
+    }
+
     function togglePersonal() {
         var personalContainer = document.getElementById("personalContainer");
         if (personalContainer.style.display === "none" || personalContainer.style.display === "") {
@@ -239,7 +295,7 @@
         } else {
             tableBox.style.display = "none";
         }
-    };
+    }
 </script>
 
 </body>
