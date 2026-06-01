@@ -28,13 +28,15 @@
     <button onclick="togglePersonal()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px; background-color:#5A5A5D;color:#F8F8FF">Personal Information</button>
     <button onclick="toggleTravel()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px; background-color:#5A5A5D;color:#F8F8FF">Travel Reflection</button>
     <button onclick="toggleMusic()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px; background-color:#5A5A5D;color:#F8F8FF">Music and Culture</button>
+    <button onclick="toggleGlobal()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px; background-color:#5A5A5D;color:#F8F8FF">Global Economy</button>
+    <button onclick="toggleCharity()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; margin-right: 10px; background-color:#5A5A5D;color:#F8F8FF">Charity and Global Contributions</button>
     <button onclick="togglePrint()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Ecological Footprint</button>
 </div>
 
 <div id="citizen" class="panel">
     <h2 style="color: white">Global Citizen</h2>
     <p>See the table of dragons below by clicking the navbar content or check out our dragon directory.</p>
-    <button onclick="toggleDragonTable()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Toggle Dragon Table</button>
+    <button onclick="toggleGlobalCitizen()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Toggle Dragon Table</button>
 </div>
 
 <div id="entry1" class="panel">
@@ -84,7 +86,7 @@
     <p><img src="EcoFootprint.jpg" alt="Footprint Breakdown"></p>
     <h2>List of actions</h2>
     <dl class="alignment-list">
-        <dt>Lawful Good: (LG)</dt>
+        <dt>Bike more to use less motor vechiles that admit more carbon dioxide into the atmospshere</dt>
         <dd>-"The Crusader." Combines honor with compassion.</dd>
         <dt>Neutral Good (NG):</dt>
         <dd>-"The Benefactor." Guided by conscience to help others without strict adherence to law.</dd>
@@ -122,7 +124,7 @@
         </thead>
         <tbody>
             <tr style="color:black; background-color:white; font-size:15px;">
-                <td style="border: 2px solid black; text-align: center;"><img src="brass-metallic-dragon.png" id="dragon-brass" width="100" height="100" alt="Brass"></td>
+                <td style="border: 2px solid black; text-align: center;"><img src="EmmaWaston.jpg" id="emma-waston" width="100" height="100" alt="Emma"></td>
                 <td style="border: 2px solid black; text-align: center;">Emma Watson – UN Women Goodwill Ambassador leading the HeForShe gender equality campaign.</td>
                 <td style="border: 2px solid black; text-align: center;"></td>
             </tr>
@@ -131,6 +133,14 @@
 </div>
 
 <div id="Journal1Container" class="main-page-content">
+    <p style="color:black">Name: Echo</p>
+</div>
+
+<div id="globalContainer" class="main-page-content">
+    <p style="color:black">Name: Echo</p>
+</div>
+
+<div id="charityContainer" class="main-page-content">
     <p style="color:black">Name: Echo</p>
 </div>
 
@@ -148,6 +158,8 @@
                 document.getElementById("travelContainer").style.display = "none";
                 document.getElementById("musicContainer").style.display = "none";
                 document.getElementById("printContainer").style.display = "none";
+                document.getElementById("globalContainer").style.display = "none";
+                document.getElementById("charityContainer").style.display = "none";
             }
             if (panelId === 'entry1') {
                 document.getElementById("Journal1Container").style.display = "none";
@@ -176,6 +188,8 @@
             document.getElementById("travelContainer").style.display = "none";
             document.getElementById("musicContainer").style.display = "none";
             document.getElementById("printContainer").style.display = "none";
+            document.getElementById("globalContainer").style.display = "none";
+            document.getElementById("charityContainer").style.display = "none";
         }
         if (panelId !== 'entry1') {
             document.getElementById("Journal1Container").style.display = "none";
@@ -228,7 +242,25 @@
         }
     }
 
-    function toggleDragonTable() {
+    function toggleGlobal(){  
+        var globalBox = document.getElementById("globalContainer");
+        if (globalBox.style.display === "none" || globalBox.style.display === "") {
+            globalBox.style.display = "block";
+        } else {
+           globalBox.style.display = "none";
+        }
+    }
+   
+    function toggleCharity(){  
+        var charityBox = document.getElementById("charityContainer");
+        if (charityBox.style.display === "none" || charityBox.style.display === "") {
+            charityBox.style.display = "block";
+        } else {
+           charityBox.style.display = "none";
+        }
+    }
+    
+    function toggleGlobalCitizen() {
         var tableBox = document.getElementById("GlobalcitizenContainer");
         if (tableBox.style.display === "none" || tableBox.style.display === "") {
             tableBox.style.display = "block";
