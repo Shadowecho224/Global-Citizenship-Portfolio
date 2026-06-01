@@ -40,6 +40,7 @@
 <div id="entry1" class="panel">
     <h2>Journal Entry 1</h2>
     <p>Feel free to reach out via email or social media.</p>
+    <button onclick="toggleUnit1()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Unit 1</button>
 </div>
 
 <div id="entry2" class="panel">
@@ -185,12 +186,12 @@
             document.getElementById("musicContainer").style.display = "none";
             document.getElementById("printContainer").style.display = "none";
         }
-        if (panelId !== 'games') {
+        if (panelId !== 'entry3') {
             document.getElementById("scratchContainer").style.display = "none";
             document.getElementById("FlappyContainer").style.display = "none";
             document.getElementById("DancerContainer").style.display = "none";
         }
-        if (panelId !== 'about') {
+        if (panelId !== 'entry1') {
             document.getElementById("aboutMeContainer").style.display = "none";
         }
         if (panelId !== 'citizen') {
@@ -279,12 +280,12 @@
         }
     }
 
-    function toggleAbout() {
-        var aboutBox = document.getElementById("aboutMeContainer");
-        if (aboutBox.style.display === "none" || aboutBox.style.display === "") {
-            aboutBox.style.display = "block";
+    function toggleUnit1() {
+        var unit1Box = document.getElementById("Unit1Container");
+        if (unit1Box.style.display === "none" || unit1Box.style.display === "") {
+            unit1Box.style.display = "block";
         } else {
-            aboutBox.style.display = "none";
+            unit1Box.style.display = "none";
         }
     }
 
