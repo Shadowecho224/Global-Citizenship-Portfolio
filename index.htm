@@ -19,9 +19,7 @@
 <ul class="nav-bar">
     <li><a onclick="showPanel('passport')">Passport</a></li>
     <li><a onclick="showPanel('citizen')">Global Citizen</a></li>
-    <li><a onclick="showPanel('entry1')">Journal Entry 1</a></li>
-    <li><a onclick="showPanel('entry2')">Journal Entry 2</a></li>
-    <li><a onclick="showPanel('entry3')">Journal Entry 3</a></li>
+    <li><a onclick="showPanel('Journal')">Journal Entries</a></li>
 </ul>
 
 <div id="passport" class="panel">
@@ -40,25 +38,16 @@
     <button onclick="toggleGlobalCitizen()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">Show</button>
 </div>
 
-<div id="entry1" class="panel">
-    <h2>Journal Entry 1</h2>
-    <button onclick="toggleJournalEntry1()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
+<div id="Journal" class="panel">
+    <h2>Journal Entries</h2>
+    <button onclick="toggleUnit1()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
+    <button onclick="toggleUnit2()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
+    <button onclick="toggleUnit3()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
 </div>
-
-<div id="entry2" class="panel">
-    <h2>Journal Entry 2</h2>
-    <button onclick="toggleJournalEntry2()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
-</div>
-
-<div id="entry3" class="panel">
-    <h2>Journal Entry 3</h2>
-    <p>Click the buttons below to load the games!</p>
-    <button onclick="toggleJournalEntry3()" style="font-size: 16px; padding: 10px 20px; cursor: pointer; background-color:#5A5A5D;color:#F8F8FF">show</button>
-</div>
-
 
 <div id="travelContainer" class="main-page-content">
     <h2 style="font-size:40px; color:black">Places or Countries I Have Travelled To</h2>
+    <p><img src="download.jpeg"></p>
     <p style="color:black"><b>Sylvan Lake</b></p>
     <p>- I went to Sylvan lake with my grandma and my brother to have fun in the lake.</p>
     <p style="color:black"><b>Sunshine Village Ski Resort</b></p>
@@ -112,7 +101,7 @@ Watson’s impact spans several pillars of globalization, particularly human rig
 <p>You shouldn't give up.</p>
 </div>
 
-<div id="Journal1Container" class="main-page-content">
+<div id="JournalContainer" class="main-page-content">
     <p style="color:black">Name: Echo</p>
 </div>
 
@@ -141,14 +130,10 @@ Watson’s impact spans several pillars of globalization, particularly human rig
                 document.getElementById("globalContainer").style.display = "none";
                 document.getElementById("charityContainer").style.display = "none";
             }
-            if (panelId === 'entry1') {
-                document.getElementById("Journal1Container").style.display = "none";
-            }
-            if (panelId === 'entry2') {
-                document.getElementById("Journal2Container").style.display = "none";
-            }
-            if (panelId === 'entry3') {
-                document.getElementById("Journal3Container").style.display = "none";
+             if (panelId !== 'Journal') {
+                document.getElementById("Unit1Container").style.display = "none";
+                document.getElementById("Unit2Container").style.display = "none";
+                document.getElementById("Unit3Container").style.display = "none";
             }
             if (panelId === 'citizen') {
                 document.getElementById("GlobalcitizenContainer").style.display = "none";
@@ -171,17 +156,10 @@ Watson’s impact spans several pillars of globalization, particularly human rig
             document.getElementById("globalContainer").style.display = "none";
             document.getElementById("charityContainer").style.display = "none";
         }
-        if (panelId !== 'entry1') {
-            document.getElementById("Journal1Container").style.display = "none";
-        }
-         if (panelId !== 'entry2') {
-            document.getElementById("Journal2Container").style.display = "none";
-             }
-         if (panelId !== 'entry3') {
-            document.getElementById("Journal3Container").style.display = "none";
-        }
-        if (panelId !== 'citizen') {
-            document.getElementById("GlobalcitizenContainer").style.display = "none";
+        if (panelId !== 'Journal') {
+            document.getElementById("Unit1Container").style.display = "none";
+            document.getElementById("Unit2Container").style.display = "none";
+            document.getElementById("Unit3Container").style.display = "none";
         }
     }
 
@@ -248,7 +226,7 @@ Watson’s impact spans several pillars of globalization, particularly human rig
             tableBox.style.display = "none";
         }
     }
-        function toggleJournalEntry1(){  
+        function toggleJournalEntry(){  
         var JournalEntry1Box = document.getElementById("JournalEntry1Container");
         if (JournalEntry1Box.style.display === "none" || JournalEntry1Box.style.display === "") {
             JournalEntry1Box.style.display = "block";
